@@ -3,15 +3,13 @@
 
 #include <iostream>
 #include <string>
-using std::string;
-using std::cout;
-using std::endl;
+using std namespace;
 
 struct Parent {
-    string id;            // unique key
+    string id;            
     string hostname;
     string ip;
-    int uptimeHours;      // contoh atribut integer
+    int uptimeHours;      
     Parent* next;
 };
 
