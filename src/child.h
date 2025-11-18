@@ -5,7 +5,7 @@
 #include <string>
 using namespace std;
 
-// Definisi Infotype Sales
+// Definisi Infotype Mobil
 struct Mobil {
     string idMobil;
     string Merek;
@@ -17,20 +17,30 @@ struct Mobil {
 
 typedef struct Mobil infotype:
 
-typedef struct elmMobil *adrMobil;
+typedef struct elmMobil *address;
 
 struct elmMobil {
     infotype info;
-    adrMobil next;
+    address next;
 };
 
 struct ListMobil {
-    adrMobil first;
+    address first;
 };
 
 // Primitif
 void createListMobil(ListMobil &L);
-adrMobil allocate(infotype x);
-//halo
+address allocate(infotype x);
+void createListMobil(ListMobil &L);
+address allocate(infotype x);
+void insertFirst(ListMobil &L, address p);
+void inserLast(ListMobil &L, address p);
+void insertafter(ListMobil &L,address prec, address &p);
+void deleteFirst(ListMobil &L, address p);
+void deleteLast(ListMobil &L, address p);
+void deleteAfter(ListMobil &L, address prec, address &p);
+void printInfo(ListMobil L);
+void findSales(ListMobil L);
+void showAllSales(ListMobil L);
 #endif
 
