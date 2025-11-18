@@ -12,23 +12,24 @@ struct Mobil {
     string Model
     int harga;
     int tahunProduksi;
+    string status;
 };
 
-typedef Sales infotype:
+typedef struct Mobil infotype:
 
-typedef struct elmSales *adrSales;
+typedef struct elmMobil *adrMobil;
 
-struct elmSales {
+struct elmMobil {
     infotype info;
-    adrSales next;
+    adrMobil next;
 };
 
-struct ListSales {
-    adrSales first;
+struct ListMobil {
+    adrMobil first;
 };
 
 // Primitif
-void createListSales(ListSales &L);
+void createListMobil(ListMobil &L);
 
 #endif
 
