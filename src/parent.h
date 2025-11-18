@@ -10,11 +10,17 @@ struct Parent {
     string hostname;
     string ip;
     int uptimeHours;      
-    Parent* next;
 };
 
+typedef struct elmlist *address;
+
+struct elmlist {
+    parent info;
+    address next;
+}
+
 struct ParentList {
-    Parent* first;
+    address first;
 };
 
 // ADT Parent
