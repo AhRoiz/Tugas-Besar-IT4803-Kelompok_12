@@ -30,6 +30,7 @@ struct ListMobil {
 
 // Primitif
 void createListMobil(ListMobil &L);
-
+adrMobil allocate(infotype x);
+//halo
 #endif
 
