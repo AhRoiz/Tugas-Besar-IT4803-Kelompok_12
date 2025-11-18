@@ -14,7 +14,7 @@ struct Parent {
 
 typedef struct elmlist *address;
 
-typedef infotype info;
+typedef parent infotype;
 
 struct elmlist {
     parent info;
