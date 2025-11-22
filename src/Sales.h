@@ -5,6 +5,7 @@
 #include <string>
 using namespace std;
 
+//Child 
 struct Sales {
     string idSales;
     string nama;
