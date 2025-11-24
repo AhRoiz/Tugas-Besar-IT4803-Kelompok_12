@@ -1,5 +1,5 @@
-#ifndef PARENT_H
-#define PARENT_H
+#ifndef SALES_H_INCLUDED
+#define SALES_H_INCLUDED
 
 #include <iostream>
 #include <string>
@@ -9,8 +9,6 @@ using namespace std;
 struct Sales {
     string idSales;
     string nama;
-    float rating;
-    int targetPenjualan;
 };
 
 typedef struct Sales infotype;
@@ -30,7 +28,7 @@ struct ListSales {
 
 // Primitif
 void createListSales(ListSales &L);
-adrSales allocate(infotype x);
+adrSales allocateSales(infotype x);
 void insertFirst(ListSales &L, adrSales p);
 void inserLast(ListSales &L, adrSales p);
 void insertafter(ListSales &L,adrSales prec, adrSales &p);
