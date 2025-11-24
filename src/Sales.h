@@ -35,8 +35,6 @@ void insertafter(ListSales &L,adrSales prec, adrSales &p);
 void deleteFirst(ListSales &L, adrSales p);
 void deleteLast(ListSales &L, adrSales p);
 void deleteAfter(ListSales &L, adrSales prec, adrSales &p);
-void printInfo(ListSales L);
 void findSales(ListSales L);
 void showAllSales(ListSales L);
-//halo
 #endif
