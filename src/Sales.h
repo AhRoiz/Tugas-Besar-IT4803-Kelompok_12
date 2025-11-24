@@ -13,30 +13,30 @@ struct Sales {
     int targetPenjualan;
 };
 
-typedef Sales infotype;
+typedef struct Sales infotype;
 
-typedef struct elmSales *address;
+typedef struct elmSales *adrSales;
 
 struct elmSales {
     infotype info;
-    address next;
-    address prev;
+    adrSales next;
+    adrSales prev;
 };
 
 struct ListSales {
-    address first;
-    address last;
+    adrSales first;
+    adrSales last;
 };
 
 // Primitif
 void createListSales(ListSales &L);
-address allocate(infotype x);
-void insertFirst(ListSales &L, address p);
-void inserLast(ListSales &L, address p);
-void insertafter(ListSales &L,address prec, address &p);
-void deleteFirst(ListSales &L, address p);
-void deleteLast(ListSales &L, address p);
-void deleteAfter(ListSales &L, address prec, address &p);
+adrSales allocate(infotype x);
+void insertFirst(ListSales &L, adrSales p);
+void inserLast(ListSales &L, adrSales p);
+void insertafter(ListSales &L,adrSales prec, adrSales &p);
+void deleteFirst(ListSales &L, adrSales p);
+void deleteLast(ListSales &L, adrSales p);
+void deleteAfter(ListSales &L, adrSales prec, adrSales &p);
 void printInfo(ListSales L);
 void findSales(ListSales L);
 void showAllSales(ListSales L);
