@@ -2,9 +2,9 @@
 #include "Sales.h"
 using namespace std;
 
-void createListSales(ListSales &L){
-    L.first = nullptr;
-    L.last = nullptr;
+void createListSales(ListSales &Ls){
+    Ls.first = nullptr;
+    Ls.last = nullptr;
 }
 adrSales allocateSales(infotype x){
     adrSales p;
@@ -15,31 +15,31 @@ adrSales allocateSales(infotype x){
     p->prev = nullptr;
     return p;
 }
-void insertFirst(ListSales &L, adrSales p){
-    if (L.first == nullptr && L.last == nullptr){
-        L.first = p;
-        L.last = p;
+void insertFirst(ListSales &Ls, adrSales p){
+    if (Ls.first == nullptr && Ls.last == nullptr){
+        Ls.first = p;
+        Ls.last = p;
     }else{
-        L.first->prev = p;
-        p->next = L.first;
-        L.first = p;
+        Ls.first->prev = p;
+        p->next = Ls.first;
+        Ls.first = p;
     }
 }
-void inserLast(ListSales &L, adrSales p){
-    if (L.first == nullptr && L.last == nullptr){
-        L.first = p;
-        L.last = p;
+void inserLast(ListSales &Ls, adrSales p){
+    if (Ls.first == nullptr && Ls.last == nullptr){
+        Ls.first = p;
+        Ls.last = p;
     }else{
-        L.last->next = p;
-        p->prev = L.last;
-        L.last = p;
+        Ls.last->next = p;
+        p->prev = Ls.last;
+        Ls.last = p;
     }
 }
-void deleteAfter(ListSales &L, adrSales prec, adrSales &p){
+void deleteAfter(ListSales &Ls, adrSales prec, adrSales &p){
     if (prec != nullptr && prec->next != nullptr) {
         p = prec->next;
-        if (p == L.last) {
-            deleteLast(L, p);
+        if (p == Ls.last) {
+            deleteLast(Ls, p);
         } else {
             p->next = p->next;
             p->next->prev = prec;
