@@ -15,7 +15,7 @@ adrSales allocateSales(infotype x){
     p->prev = nullptr;
     return p;
 }
-void insertFirst(ListSales &Ls, adrSales p){
+void insertFirstSales(ListSales &Ls, adrSales p){
     if (Ls.first == nullptr && Ls.last == nullptr){
         Ls.first = p;
         Ls.last = p;
@@ -25,7 +25,7 @@ void insertFirst(ListSales &Ls, adrSales p){
         Ls.first = p;
     }
 }
-void inserLast(ListSales &Ls, adrSales p){
+void inserLastSales(ListSales &Ls, adrSales p){
     if (Ls.first == nullptr && Ls.last == nullptr){
         Ls.first = p;
         Ls.last = p;
@@ -35,7 +35,7 @@ void inserLast(ListSales &Ls, adrSales p){
         Ls.last = p;
     }
 }
-void deleteAfter(ListSales &Ls, adrSales prec, adrSales &p){
+void deleteAfterSales(ListSales &Ls, adrSales prec, adrSales &p){
     if (prec != nullptr && prec->next != nullptr) {
         p = prec->next;
         if (p == Ls.last) {

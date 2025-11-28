@@ -28,12 +28,12 @@ struct ListSales {
 // Primitif
 void createListSales(ListSales &Ls);
 adrSales allocateSales(infotype x);
-void insertFirst(ListSales &Ls, adrSales p);
-void inserLast(ListSales &Ls, adrSales p);
-void insertafter(ListSales &Ls,adrSales prec, adrSales p);
-void deleteFirst(ListSales &Ls, adrSales &p);
-void deleteLast(ListSales &Ls, adrSales &p);
-void deleteAfter(ListSales &Ls, adrSales prec, adrSales &p);
+void insertFirstSales(ListSales &Ls, adrSales p);
+void inserLastSales(ListSales &Ls, adrSales p);
+void insertafterSales(ListSales &Ls,adrSales prec, adrSales p);
+void deleteFirstSales(ListSales &Ls, adrSales &p);
+void deleteLastSales(ListSales &Ls, adrSales &p);
+void deleteAfterSales(ListSales &Ls, adrSales prec, adrSales &p);
 adrSales findSales(ListSales Ls, string IDsales);
 void showAllSales(ListSales Ls);
 #endif
