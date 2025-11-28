@@ -43,3 +43,24 @@ void deleteLastSales(ListSales &L, adrSales &p) {
         p->prev = nullptr;
     }
 } 
+
+adrSales findSales(ListSales L, string idSales) {
+    adrSales p = L.first;
+    while (p != nullptr) {
+        if (p->info.idSales == idSales) {
+            return p;
+        }
+        p = p->next;
+    }
+    return nullptr;
+}
+
+void showAllSales(ListSales L) {
+    cout << "=== DATA SALES (Parent - DLL) ===" << endl;
+    adrSales P = L.first;
+    while (P != NULL) {
+        cout << "ID: " << P->info.idSales << " | Nama: " << P->info.nama << endl;
+        P = P->next;
+    }
+    cout << endl;
+}
