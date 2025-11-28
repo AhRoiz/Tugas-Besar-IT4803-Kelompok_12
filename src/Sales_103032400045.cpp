@@ -14,3 +14,17 @@ void insertAfterSales(ListSales &L, adrSales prec, adrSales p) {
         }
     }
 }
+
+void deleteFirstSales(ListSales &L, adrSales &p) {
+    if (L.first != NULL) {
+        p = L.first;
+        if (L.first == L.last) {
+            L.first = NULL;
+            L.last = NULL;
+        } else {
+            L.first = p->next;
+            L.first->prev = NULL;
+            p->next = NULL;
+        }
+    }
+}
