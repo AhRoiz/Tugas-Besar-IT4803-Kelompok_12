@@ -12,7 +12,6 @@ struct Mobil {
     string Model;
     int harga;
     int tahunProduksi;
-    string status;
 };
 
 typedef struct Mobil infotype;
