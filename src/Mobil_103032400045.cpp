@@ -2,15 +2,15 @@
 #include <iostream>
 using namespace std;
 
-void createListMobil(ListMobil &L) {
-    L.first = NULL;
+void createListMobil(ListMobil &Lm) {
+    Lm.first = NULL;
 }
 
 adrMobil allocateMobil(infotypeMobil x) {
     adrMobil p;
     
     p = new elmMobil;
-    p->info.id = x.id;
+    p->info.idMobil = x.idMobil;
     p->info.merk = x.merk;
     p->info.model = x.model;
     p->info.harga = x.harga;
@@ -20,27 +20,27 @@ adrMobil allocateMobil(infotypeMobil x) {
     return p;
 }
 
-void insertFirstMobil(ListMobil &L, adrMobil p) {
-    p->next = L.first;
-    L.first = p;
+void insertFirstMobil(ListMobil &Lm, adrMobil p) {
+    p->next = Lm.first;
+    Lm.first = p;
 }
 
-void insertLastMobil(ListMobil &L, adrMobil p) {
-    if (L.first == NULL) {
-        insertFirstMobil(L, p);
+void insertLastMobil(ListMobil &Lm, adrMobil p) {
+    if (Lm.first == nullptr) {
+        insertFirstMobil(Lm, p);
     } else {
-        adrMobil Q = L.first;
-        while (Q->next != NULL) {
+        adrMobil Q = Lm.first;
+        while (Q->next != nullptr) {
             Q = Q->next;
         }
         Q->next = p;
     }
 }
 
-void deleteAfterMobil(ListMobil &L, adrMobil prec, adrMobil &p) {
-    if (prec != NULL && prec->next != NULL) {
+void deleteAfterMobil(ListMobil &Lm, adrMobil prec, adrMobil &p) {
+    if (prec != nullptr && prec->next != nullptr) {
         p = prec->next;
         prec->next = p->next;
-        p->next = NULL;
+        p->next = nullptr;
     }
 }
