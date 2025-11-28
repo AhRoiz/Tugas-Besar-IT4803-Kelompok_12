@@ -25,7 +25,7 @@ void insertFirstSales(ListSales &Ls, adrSales p){
         Ls.first = p;
     }
 }
-void inserLastSales(ListSales &Ls, adrSales p){
+void insertLastSales(ListSales &Ls, adrSales p){
     if (Ls.first == nullptr && Ls.last == nullptr){
         Ls.first = p;
         Ls.last = p;
@@ -39,7 +39,7 @@ void deleteAfterSales(ListSales &Ls, adrSales prec, adrSales &p){
     if (prec != nullptr && prec->next != nullptr) {
         p = prec->next;
         if (p == Ls.last) {
-            deleteLast(Ls, p);
+            deleteLastSales(Ls, p);
         } else {
             p->next = p->next;
             p->next->prev = prec;

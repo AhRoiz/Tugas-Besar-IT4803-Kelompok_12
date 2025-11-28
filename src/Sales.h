@@ -29,7 +29,7 @@ struct ListSales {
 void createListSales(ListSales &Ls);
 adrSales allocateSales(infotype x);
 void insertFirstSales(ListSales &Ls, adrSales p);
-void inserLastSales(ListSales &Ls, adrSales p);
+void insertLastSales(ListSales &Ls, adrSales p);
 void insertafterSales(ListSales &Ls,adrSales prec, adrSales p);
 void deleteFirstSales(ListSales &Ls, adrSales &p);
 void deleteLastSales(ListSales &Ls, adrSales &p);
