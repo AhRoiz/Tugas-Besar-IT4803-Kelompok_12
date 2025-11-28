@@ -1,11 +1,10 @@
-#ifndef CHILD_H
-#define CHILD_H
+#ifndef MOBIL_H_INCLUDED
+#define MOBIL_H_INCLUDED
 
 #include <iostream>
 #include <string>
 using namespace std;
 
-//Parent 
 // Definisi Infotype Mobil
 struct Mobil {
     string idMobil;
