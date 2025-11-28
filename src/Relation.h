@@ -33,5 +33,11 @@ adrRelasi findRelasi(ListRelasi L, adrSales P, adrMobil C);
 void deleteRelasiByParent(ListRelasi &L, adrSales P);
 void deleteRelasiByChild(ListRelasi &L, adrMobil C);
 
+void showParentWithChild(ListSales LS, ListRelasi LR);
+void showChildWithParent(ListMobil LM, ListRelasi LR);
+int countChildNoParent(ListMobil LM, ListRelasi LR);
+int countParentNoChild(ListSales LS, ListRelasi LR);
+void editRelasi(ListRelasi &LR, adrSales oldP, adrMobil oldC, adrSales newP, adrMobil newC);
+
 
 #endif
