@@ -1,27 +1,23 @@
-#ifndef CHILD_H
-#define CHILD_H
+#ifndef MOBIL_H_INCLUDED
+#define MOBIL_H_INCLUDED
 
 #include <iostream>
 #include <string>
 using namespace std;
 
-//Parent 
-// Definisi Infotype Mobil
 struct Mobil {
-    string idMobil;
-    string Merek;
-    string Model;
+    string id;
+    string merk;
+    string model;
     int harga;
     int tahunProduksi;
-    string status;
 };
 
-typedef struct Mobil infotype;
-
+typedef struct Mobil infotypeMobil;
 typedef struct elmMobil *adrMobil;
 
 struct elmMobil {
-    infotype info;
+    infotypeMobil info;
     adrMobil next;
 };
 
@@ -29,10 +25,11 @@ struct ListMobil {
     adrMobil first;
 };
 
+
 // Primitif
 
 void createListMobil(ListMobil &Lm);
-adrMobil allocateMobil(infotype x);
+adrMobil allocateMobil(infotypeMobil x);
 void insertFirstMobil(ListMobil &Lm, adrMobil p);
 void inserLastMobil(ListMobil &Lm, adrMobil p);
 void insertafterMobil(ListMobil &Lm,adrMobil prec, adrMobil p);
