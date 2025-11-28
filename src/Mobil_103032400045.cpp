@@ -37,10 +37,10 @@ void insertLastMobil(ListMobil &L, adrMobil p) {
     }
 }
 
-void deleteAfterMobil(ListMobil &L, adrMobil Prec, adrMobil &p) {
-    if (Prec != NULL && Prec->next != NULL) {
-        p = Prec->next;
-        Prec->next = p->next;
+void deleteAfterMobil(ListMobil &L, adrMobil prec, adrMobil &p) {
+    if (prec != NULL && prec->next != NULL) {
+        p = prec->next;
+        prec->next = p->next;
         p->next = NULL;
     }
 }
