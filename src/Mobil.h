@@ -6,7 +6,7 @@
 using namespace std;
 
 struct Mobil {
-    string id;
+    string idMobil;
     string merk;
     string model;
     int harga;
