@@ -5,27 +5,26 @@
 #include <string>
 using namespace std;
 
-// Definisi Infotype Mobil
 struct Mobil {
-    string idMobil;
-    string Merek;
-    string Model;
+    string id;
+    string merk;
+    string model;
     int harga;
     int tahunProduksi;
 };
 
-typedef struct Mobil infotype;
-
+typedef struct Mobil infotypeMobil;
 typedef struct elmMobil *adrMobil;
 
 struct elmMobil {
-    infotype info;
+    infotypeMobil info;
     adrMobil next;
 };
 
 struct ListMobil {
     adrMobil first;
 };
+
 
 // Primitif
 
