@@ -5,38 +5,38 @@ void createListMobil(ListMobil &L) {
 }
 
 adrMobil allocateMobil(infotypeMobil x) {
-    adrMobil P = new elmMobil;
-    P->info.id = x.id;
-    P->info.merk = x.merk;
-    P->info.model = x.model;
-    P->info.harga = x.harga;
-    P->info.tahunProduksi = x.tahunProduksi;
-    P->next = nullptr;
+    adrMobil p = new elmMobil;
+    p->info.id = x.id;
+    p->info.merk = x.merk;
+    p->info.model = x.model;
+    p->info.harga = x.harga;
+    p->info.tahunProduksi = x.tahunProduksi;
+    p->next = nullptr;
 
-    return P;
+    return p;
 }
 
-void insertFirstMobil(ListMobil &L, adrMobil P) {
-    P->next = L.first;
-    L.first = P;
+void insertFirstMobil(ListMobil &L, adrMobil p) {
+    p->next = L.first;
+    L.first = p;
 }
 
-void insertLastMobil(ListMobil &L, adrMobil P) {
+void insertLastMobil(ListMobil &L, adrMobil p) {
     if (L.first == NULL) {
-        insertFirstMobil(L, P);
+        insertFirstMobil(L, p);
     } else {
         adrMobil Q = L.first;
         while (Q->next != NULL) {
             Q = Q->next;
         }
-        Q->next = P;
+        Q->next = p;
     }
 }
 
-void deleteAfterMobil(ListMobil &L, adrMobil Prec, adrMobil &P) {
+void deleteAfterMobil(ListMobil &L, adrMobil Prec, adrMobil &p) {
     if (Prec != NULL && Prec->next != NULL) {
-        P = Prec->next;
-        Prec->next = P->next;
-        P->next = NULL;
+        p = Prec->next;
+        Prec->next = p->next;
+        p->next = NULL;
     }
 }
