@@ -29,7 +29,7 @@ struct ListMobil {
 // Primitif
 
 void createListMobil(ListMobil &Lm);
-adrMobil allocateMobil(infotype x);
+adrMobil allocateMobil(infotypeMobil x);
 void insertFirstMobil(ListMobil &Lm, adrMobil p);
 void inserLastMobil(ListMobil &Lm, adrMobil p);
 void insertafterMobil(ListMobil &Lm,adrMobil prec, adrMobil p);
