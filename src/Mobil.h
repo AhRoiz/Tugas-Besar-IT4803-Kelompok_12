@@ -39,7 +39,7 @@ void insertafterMobil(ListMobil &Lm,adrMobil prec, adrMobil p);
 void deleteFirstMobil(ListMobil &Lm, adrMobil &p);
 void deleteLastMobil(ListMobil &Lm, adrMobil &p);
 void deleteAfterMobil(ListMobil &Lm, adrMobil prec, adrMobil &p);
-void findMobil(ListMobil Lm);
+adrMobil findMobil(ListMobil Lm, string IDmobil);
 void showAllMobil(ListMobil Lm);
 #endif
 

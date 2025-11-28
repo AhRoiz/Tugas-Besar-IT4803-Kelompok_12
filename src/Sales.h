@@ -35,6 +35,6 @@ void insertafter(ListSales &Ls,adrSales prec, adrSales p);
 void deleteFirst(ListSales &Ls, adrSales &p);
 void deleteLast(ListSales &Ls, adrSales &p);
 void deleteAfter(ListSales &Ls, adrSales prec, adrSales &p);
-void findSales(ListSales Ls);
+adrSales findSales(ListSales Ls, string IDsales);
 void showAllSales(ListSales Ls);
 #endif
