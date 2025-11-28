@@ -1,11 +1,15 @@
 #include "Mobil.h"
+#include <iostream>
+using namespace std;
 
 void createListMobil(ListMobil &L) {
     L.first = NULL;
 }
 
 adrMobil allocateMobil(infotypeMobil x) {
-    adrMobil p = new elmMobil;
+    adrMobil p;
+    
+    p = new elmMobil;
     p->info.id = x.id;
     p->info.merk = x.merk;
     p->info.model = x.model;
