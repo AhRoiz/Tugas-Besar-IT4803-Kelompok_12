@@ -1,11 +1,10 @@
-#ifndef SALsES_H_INCLsUDED
-#define SALsES_H_INCLsUDED
+#ifndef SALES_H_INCLUDED
+#define SALES_H_INCLUDED
 
 #include <iostream>
 #include <string>
 using namespace std;
 
-//Child 
 struct Sales {
     string idSales;
     string nama;
