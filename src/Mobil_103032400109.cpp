@@ -51,6 +51,7 @@ void showAllMobil(ListMobil Lm){
     p = Lm.first;
     while (p != nullptr){
         cout << "ID Mobil : " << p->info.idMobil << endl;
+        p = p->next;
     }
-    
+    cout << endl;
 }
