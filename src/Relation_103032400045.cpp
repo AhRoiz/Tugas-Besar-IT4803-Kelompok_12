@@ -43,3 +43,9 @@ void insertLastRelasi(ListRelasi &L, adrRelasi R) {
 void insertAfterRelasi(ListRelasi &L, adrRelasi Prec, adrRelasi R) {
     
 }
+
+void deleteRelasiByParent(ListRelasi &L, adrSales P);
+void deleteRelasiByChild(ListRelasi &L, adrMobil C);
+void showParentWithChild(ListSales LS, ListRelasi LR);
+int countParentNoChild(ListSales LS, ListRelasi LR);
+void editRelasi(ListRelasi &LR, adrSales oldP, adrMobil oldC, adrSales newP, adrMobil newC);

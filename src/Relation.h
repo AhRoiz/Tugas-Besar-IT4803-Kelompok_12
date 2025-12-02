@@ -25,21 +25,21 @@ void insertFirstRelasi(ListRelasi &L, adrRelasi R);
 void insertLastRelasi(ListRelasi &L, adrRelasi R);
 void insertAfterRelasi(ListRelasi &L, adrRelasi Prec, adrRelasi R);
 
-void deleteFirstRelasi(ListRelasi &L, adrRelasi &R);
+void deleteFirstRelasi(ListRelasi &L, adrRelasi &R); //semua delete jafar
 void deleteLastRelasi(ListRelasi &L, adrRelasi &R);
 void deleteAfterRelasi(ListRelasi &L, adrRelasi Prec, adrRelasi &R);
 
-void deleteRelasiSpecific(ListRelasi &L, adrSales P, adrMobil C, adrRelasi &R);
+void deleteRelasiSpecific(ListRelasi &L, adrSales P, adrMobil C, adrRelasi &R); //dua ini jafar
 adrRelasi findRelasi(ListRelasi L, adrSales P, adrMobil C);
 
-void deleteRelasiByParent(ListRelasi &L, adrSales P);
+void deleteRelasiByParent(ListRelasi &L, adrSales P); // dua ini ahmad
 void deleteRelasiByChild(ListRelasi &L, adrMobil C);
 
-void showParentWithChild(ListSales LS, ListRelasi LR);
-void showChildWithParent(ListMobil LM, ListRelasi LR);
-int countChildNoParent(ListMobil LM, ListRelasi LR);
-int countParentNoChild(ListSales LS, ListRelasi LR);
-void editRelasi(ListRelasi &LR, adrSales oldP, adrMobil oldC, adrSales newP, adrMobil newC);
+void showParentWithChild(ListSales LS, ListRelasi LR); //ahmad
+void showChildWithParent(ListMobil LM, ListRelasi LR);//jafar
+int countChildNoParent(ListMobil LM, ListRelasi LR);//jafar
+int countParentNoChild(ListSales LS, ListRelasi LR);//ahmad
+void editRelasi(ListRelasi &LR, adrSales oldP, adrMobil oldC, adrSales newP, adrMobil newC); //ahmad
 
 
 #endif
