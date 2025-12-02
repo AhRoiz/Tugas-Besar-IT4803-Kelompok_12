@@ -10,10 +10,12 @@ struct elmRelasi {
     adrSales parent;
     adrMobil child;
     adrRelasi next;
+    adrRelasi prev;
 };
 
 struct ListRelasi {
     adrRelasi first;
+    adrRelasi last;
 };
 
 void createListRelasi(ListRelasi &L);
