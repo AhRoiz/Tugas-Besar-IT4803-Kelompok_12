@@ -6,7 +6,7 @@ using namespace std;
 void deleteFirstRelasi(ListRelasi &L, adrRelasi &R){
     if (L.first != nullptr) {
         R = L.first;
-        if (L.first == L.last) { // Only one element
+        if (L.first == L.last) { 
             L.first = nullptr;
             L.last = nullptr;
         } else {
@@ -17,13 +17,13 @@ void deleteFirstRelasi(ListRelasi &L, adrRelasi &R){
         R->prev = nullptr;
     } else {
         cout << "List kosong" << endl;
-        R = nullptr; // List is empty
+        R = nullptr; 
     }
 } //semua delete jafar
 void deleteLastRelasi(ListRelasi &L, adrRelasi &R){
     if (L.last != nullptr) {
         R = L.last;
-        if (L.first == L.last) { // Only one element
+        if (L.first == L.last) { 
             L.first = nullptr;
             L.last = nullptr;
         } else {
@@ -34,7 +34,7 @@ void deleteLastRelasi(ListRelasi &L, adrRelasi &R){
         R->prev = nullptr;
     } else {
         cout << "List kosong" << endl;
-        R = nullptr; // List is empty
+        R = nullptr; 
     }
 }
 void deleteAfterRelasi(ListRelasi &L, adrRelasi Prec, adrRelasi &R){
@@ -44,12 +44,12 @@ void deleteAfterRelasi(ListRelasi &L, adrRelasi Prec, adrRelasi &R){
         if (R->next != nullptr) {
             R->next->prev = Prec;
         } else {
-            L.last = Prec; // Update last if we deleted the last element
+            L.last = Prec; 
         }
         R->next = nullptr;
         R->prev = nullptr;
     } else {
-        R = nullptr; // No element to delete after Prec
+        R = nullptr; 
     }
 }
 
@@ -69,17 +69,17 @@ void deleteRelasiSpecific(ListRelasi &L, adrSales P, adrMobil C, adrRelasi &R){
         }
         current = current->next;
     }
-    R = nullptr; // Relation not found
+    R = nullptr; 
 } //dua ini jafar
 adrRelasi findRelasi(ListRelasi L, adrSales P, adrMobil C){
     adrRelasi current = L.first;
     while (current != nullptr) {
         if (current->parent == P && current->child == C) {
-            return current; // Relation found
+            return current;
         }
         current = current->next;
     }
-    return nullptr; // Relation not found
+    return nullptr; 
 }
 
 void showChildWithParent(ListMobil LM, ListRelasi LR);//jafar
