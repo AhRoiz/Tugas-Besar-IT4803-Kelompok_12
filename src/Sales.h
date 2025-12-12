@@ -8,14 +8,16 @@ using namespace std;
 struct Sales {
     string idSales;
     string nama;
+    int jumlahTerjual;
+    string golongan;
 };
 
-typedef struct Sales infotype;
+typedef struct Sales infotypeSales;
 
 typedef struct elmSales *adrSales;
 
 struct elmSales {
-    infotype info;
+    infotypeSales info;
     adrSales next;
     adrSales prev;
 };
@@ -27,7 +29,8 @@ struct ListSales {
 
 // Primitif
 void createListSales(ListSales &Ls);
-adrSales allocateSales(infotype x);
+string cekGolongan(int jumlah);
+adrSales allocateSales(infotypeSales x);
 void insertFirstSales(ListSales &Ls, adrSales p);
 void insertLastSales(ListSales &Ls, adrSales p);
 void insertafterSales(ListSales &Ls,adrSales prec, adrSales p);

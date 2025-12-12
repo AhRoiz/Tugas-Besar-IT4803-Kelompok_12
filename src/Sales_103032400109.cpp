@@ -6,11 +6,22 @@ void createListSales(ListSales &Ls){
     Ls.first = nullptr;
     Ls.last = nullptr;
 }
-adrSales allocateSales(infotype x){
+string cekGolongan(int jumlah) {
+    if (jumlah <= 2) {
+        return "Trainee";
+    } else if (jumlah <= 5) {
+        return "Junior";
+    } else {
+        return "Senior";
+    }
+}
+adrSales allocateSales(infotypeSales x){
     adrSales p;
     p = new elmSales;
     p->info.idSales = x.idSales;
     p->info.nama = x.nama;
+    p->info.jumlahTerjual = x.jumlahTerjual;
+    p->info.golongan = cekGolongan(x.jumlahTerjual);
     p->next = nullptr;
     p->prev = nullptr;
     return p;
@@ -48,3 +59,4 @@ void deleteAfterSales(ListSales &Ls, adrSales prec, adrSales &p){
         }
     }
 }
+

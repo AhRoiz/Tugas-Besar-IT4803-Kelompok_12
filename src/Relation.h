@@ -1,5 +1,5 @@
-#ifndef RELATION_H_INCLUDED
-#define RELATION_H_INCLUDED
+#ifndef RELATION_H
+#define RELATION_H
 
 #include "Sales.h"
 #include "Mobil.h"
@@ -25,21 +25,20 @@ void insertFirstRelasi(ListRelasi &L, adrRelasi R);
 void insertLastRelasi(ListRelasi &L, adrRelasi R);
 void insertAfterRelasi(ListRelasi &L, adrRelasi Prec, adrRelasi R);
 
-void deleteFirstRelasi(ListRelasi &L, adrRelasi &R); //semua delete jafar
+void deleteFirstRelasi(ListRelasi &L, adrRelasi &R);
 void deleteLastRelasi(ListRelasi &L, adrRelasi &R);
 void deleteAfterRelasi(ListRelasi &L, adrRelasi Prec, adrRelasi &R);
 
-void deleteRelasiSpecific(ListRelasi &L, adrSales P, adrMobil C, adrRelasi &R); //dua ini jafar
+void deleteRelasiSpecific(ListRelasi &L, adrSales P, adrMobil C, adrRelasi &R);
 adrRelasi findRelasi(ListRelasi L, adrSales P, adrMobil C);
 
-void deleteRelasiByParent(ListRelasi &L, adrSales P); // dua ini ahmad
+void deleteRelasiByParent(ListRelasi &L, adrSales P);
 void deleteRelasiByChild(ListRelasi &L, adrMobil C);
 
-void showParentWithChild(ListSales LS, ListRelasi LR); //ahmad
-void showChildWithParent(ListMobil LM, ListRelasi LR);//jafar
-int countChildNoParent(ListMobil LM, ListRelasi LR);//jafar
-int countParentNoChild(ListSales LS, ListRelasi LR);//ahmad
-void editRelasi(ListRelasi &LR, adrSales oldP, adrMobil oldC, adrSales newP, adrMobil newC); //ahmad
+void showParentWithChild(ListSales LS, ListRelasi LR);
+void showChildWithParent(ListMobil LM, ListRelasi LR);
 
+// --- TAMBAHAN BARU ---
+void updateRelasi(ListRelasi &LR, ListSales LS, ListMobil LM, string idSLama, string idMLama, string idSBaru, string idMBaru);
 
 #endif

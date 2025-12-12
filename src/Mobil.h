@@ -31,12 +31,13 @@ struct ListMobil {
 void createListMobil(ListMobil &Lm);
 adrMobil allocateMobil(infotypeMobil x);
 void insertFirstMobil(ListMobil &Lm, adrMobil p);
-void inserLastMobil(ListMobil &Lm, adrMobil p);
+void insertLastMobil(ListMobil &Lm, adrMobil p);
 void insertafterMobil(ListMobil &Lm,adrMobil prec, adrMobil p);
 void deleteFirstMobil(ListMobil &Lm, adrMobil &p);
 void deleteLastMobil(ListMobil &Lm, adrMobil &p);
 void deleteAfterMobil(ListMobil &Lm, adrMobil prec, adrMobil &p);
 adrMobil findMobil(ListMobil Lm, string idMobil);
 void showAllMobil(ListMobil Lm);
+void updateRelasi(ListRelasi &LR, ListSales LS, ListMobil LM, string idSLama, string idMLama, string idSBaru, string idMBaru);
 #endif
 
