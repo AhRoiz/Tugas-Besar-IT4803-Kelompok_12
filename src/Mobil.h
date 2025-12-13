@@ -38,6 +38,6 @@ void deleteLastMobil(ListMobil &Lm, adrMobil &p);
 void deleteAfterMobil(ListMobil &Lm, adrMobil prec, adrMobil &p);
 adrMobil findMobil(ListMobil Lm, string idMobil);
 void showAllMobil(ListMobil Lm);
-void updateRelasi(ListRelasi &LR, ListSales LS, ListMobil LM, string idSLama, string idMLama, string idSBaru, string idMBaru);
+
 #endif
 

@@ -8,7 +8,7 @@ void createListMobil(ListMobil &Lm) {
 
 adrMobil allocateMobil(infotypeMobil x) {
     adrMobil p;
-    
+
     p = new elmMobil;
     p->info.idMobil = x.idMobil;
     p->info.merk = x.merk;

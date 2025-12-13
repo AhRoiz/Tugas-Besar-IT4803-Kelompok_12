@@ -1,3 +1,4 @@
+
 #ifndef SALES_H_INCLUDED
 #define SALES_H_INCLUDED
 
@@ -6,14 +7,14 @@
 using namespace std;
 
 struct Sales {
-    string idSales;
+    string id;
     string nama;
+    // REVISI: noTelp dihapus, diganti jumlahTerjual
     int jumlahTerjual;
-    string golongan;
+    string golongan;   // Trainee, Junior, Senior (Otomatis)
 };
 
 typedef struct Sales infotypeSales;
-
 typedef struct elmSales *adrSales;
 
 struct elmSales {
@@ -27,16 +28,22 @@ struct ListSales {
     adrSales last;
 };
 
-// Primitif
-void createListSales(ListSales &Ls);
+void createListSales(ListSales &L);
+// REVISI: Parameter noTelp dihapus, diganti int jumlahAwal
+adrSales alokasiSales(infotypeSales S);
+
+// Fungsi Tambahan untuk update golongan otomatis
 string cekGolongan(int jumlah);
-adrSales allocateSales(infotypeSales x);
-void insertFirstSales(ListSales &Ls, adrSales p);
-void insertLastSales(ListSales &Ls, adrSales p);
-void insertafterSales(ListSales &Ls,adrSales prec, adrSales p);
-void deleteFirstSales(ListSales &Ls, adrSales &p);
-void deleteLastSales(ListSales &Ls, adrSales &p);
-void deleteAfterSales(ListSales &Ls, adrSales prec, adrSales &p);
-adrSales findSales(ListSales Ls, string IDsales);
-void showAllSales(ListSales Ls);
+
+void insertFirstSales(ListSales &L, adrSales P);
+void insertLastSales(ListSales &L, adrSales P);
+void insertAfterSales(ListSales &L, adrSales Prec, adrSales P);
+
+void deleteFirstSales(ListSales &L, adrSales &P);
+void deleteLastSales(ListSales &L, adrSales &P);
+void deleteAfterSales(ListSales &L, adrSales Prec, adrSales &P);
+
+adrSales findSales(ListSales L, string id);
+void showAllSales(ListSales L);
+
 #endif

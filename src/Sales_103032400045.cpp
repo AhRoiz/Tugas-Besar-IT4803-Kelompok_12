@@ -42,12 +42,12 @@ void deleteLastSales(ListSales &Ls, adrSales &p) {
         Ls.last->next = nullptr;
         p->prev = nullptr;
     }
-} 
+}
 
 adrSales findSales(ListSales Ls, string idSales) {
     adrSales p = Ls.first;
     while (p != nullptr) {
-        if (p->info.idSales == idSales) {
+        if (p->info.id == idSales) {
             return p;
         }
         p = p->next;
@@ -59,7 +59,7 @@ void showAllSales(ListSales Ls) {
     cout << "=== DATA SALES (Parent - DLL) ===" << endl;
     adrSales P = Ls.first;
     while (P != nullptr) {
-        cout << "ID: " << P->info.idSales << " | Nama: " << P->info.nama << endl;
+        cout << "ID: " << P->info.id << " | Nama: " << P->info.nama << "| Golongan: " << P->info.golongan << "| Jumlah Penjualan: "<< P->info.jumlahTerjual<<endl;
         P = P->next;
     }
     cout << endl;

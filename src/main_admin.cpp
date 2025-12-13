@@ -1,14 +1,16 @@
-#include <iostream>
-using namespace std;
+
 #include "Sales.h"
 #include "Mobil.h"
 #include "Relation.h"
-
+#include <iostream>
+using namespace std;
 void menuAdmin(ListSales &LS, ListMobil &LM, ListRelasi &LR, long long &totalPendapatan) {
     int pilihan, subPilihan;
     infotypeSales S;
     infotypeMobil M;
-    string idS, idM, merkM, modelM;
+    string idS, namaS;
+    int jumlahAwal;
+    string idM, merkM, modelM;
     int hargaM, tahunM;
     string idPrec;
 
@@ -36,17 +38,17 @@ void menuAdmin(ListSales &LS, ListMobil &LM, ListRelasi &LR, long long &totalPen
         switch(pilihan) {
             case 1:
                 cout << "\n--- Tambah Data Sales ---" << endl;
-                cout << "Masukkan ID: "; cin >> S.idSales;
+                cout << "Masukkan ID: "; cin >> S.id;
                 cout << "Masukkan Nama: "; cin >> S.nama;
                 cout << "Jumlah mobil yg SUDAH terjual: "; cin >> S.jumlahTerjual;
-                PS = allocateSales(S);
+                PS = alokasiSales(S);
                 cout << "1.First 2.Last 3.After: "; cin >> subPilihan;
                 if (subPilihan == 1) insertFirstSales(LS, PS);
                 else if (subPilihan == 2) insertLastSales(LS, PS);
                 else {
                     cout << "ID Sales sebelumnya: "; cin >> idPrec;
                     PrecSales = findSales(LS, idPrec);
-                    if(PrecSales) insertafterSales(LS, PrecSales, PS);
+                    if(PrecSales) insertAfterSales(LS, PrecSales, PS);
                     else { cout << "ID tidak ditemukan!" << endl; delete PS; }
                 }
                 break;
@@ -128,7 +130,6 @@ void menuAdmin(ListSales &LS, ListMobil &LM, ListRelasi &LR, long long &totalPen
                 PS = findSales(LS, idS);
 
                 if (PS != NULL && PM != NULL) {
-                    // Validasi: Apakah benar sales ini yg pegang mobilnya?
                     adrRelasi cekRelasi = findRelasi(LR, PS, PM);
                     if (cekRelasi != NULL) {
                         // 1. Update Stats Sales
@@ -177,6 +178,9 @@ void menuAdmin(ListSales &LS, ListMobil &LM, ListRelasi &LR, long long &totalPen
                 updateRelasi(LR, LS, LM, idSLama, idMLama, idSBaru, idMBaru);
                 break;
         }
+            //case 10:
+                //cout << menampilkan child dari parent tertentu: ";
+                //PS = findSales(LS, idS);
+                //if (PS != NULL && PM != NULL)
     } while (pilihan != 0);
 }
-
