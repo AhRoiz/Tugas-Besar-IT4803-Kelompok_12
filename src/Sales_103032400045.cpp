@@ -2,11 +2,16 @@
 #include "Sales.h"
 using namespace std;
 
-void insertAfterSales(ListSales &Ls, adrSales prec, adrSales p) {
-    if (prec != nullptr) {
-        if (prec == Ls.last) {
+void insertAfterSales(ListSales &Ls, adrSales prec, adrSales p)
+{
+    if (prec != nullptr)
+    {
+        if (prec == Ls.last)
+        {
             insertLastSales(Ls, p);
-        } else {
+        }
+        else
+        {
             p->next = prec->next;
             p->prev = prec;
             prec->next->prev = p;
@@ -15,13 +20,18 @@ void insertAfterSales(ListSales &Ls, adrSales prec, adrSales p) {
     }
 }
 
-void deleteFirstSales(ListSales &Ls, adrSales &p) {
-    if (Ls.first != nullptr) {
+void deleteFirstSales(ListSales &Ls, adrSales &p)
+{
+    if (Ls.first != nullptr)
+    {
         p = Ls.first;
-        if (Ls.first == Ls.last) {
+        if (Ls.first == Ls.last)
+        {
             Ls.first = nullptr;
             Ls.last = nullptr;
-        } else {
+        }
+        else
+        {
             Ls.first = p->next;
             Ls.first->prev = nullptr;
             p->next = nullptr;
@@ -29,14 +39,20 @@ void deleteFirstSales(ListSales &Ls, adrSales &p) {
     }
 }
 
-void deleteLastSales(ListSales &Ls, adrSales &p) {
-    if (Ls.first == nullptr) {
+void deleteLastSales(ListSales &Ls, adrSales &p)
+{
+    if (Ls.first == nullptr)
+    {
         p = nullptr;
-    } else if (Ls.first == Ls.last) {
+    }
+    else if (Ls.first == Ls.last)
+    {
         p = Ls.first;
         Ls.first = nullptr;
         Ls.last = nullptr;
-    } else {
+    }
+    else
+    {
         p = Ls.last;
         Ls.last = p->prev;
         Ls.last->next = nullptr;
@@ -44,10 +60,13 @@ void deleteLastSales(ListSales &Ls, adrSales &p) {
     }
 }
 
-adrSales findSales(ListSales Ls, string idSales) {
+adrSales findSales(ListSales Ls, string idSales)
+{
     adrSales p = Ls.first;
-    while (p != nullptr) {
-        if (p->info.id == idSales) {
+    while (p != nullptr)
+    {
+        if (p->info.id == idSales)
+        {
             return p;
         }
         p = p->next;
@@ -55,11 +74,13 @@ adrSales findSales(ListSales Ls, string idSales) {
     return nullptr;
 }
 
-void showAllSales(ListSales Ls) {
+void showAllSales(ListSales Ls)
+{
     cout << "=== DATA SALES (Parent - DLL) ===" << endl;
     adrSales P = Ls.first;
-    while (P != nullptr) {
-        cout << "ID: " << P->info.id << " | Nama: " << P->info.nama << "| Golongan: " << P->info.golongan << "| Jumlah Penjualan: "<< P->info.jumlahTerjual<<endl;
+    while (P != nullptr)
+    {
+        cout << "ID: " << P->info.id << " | Nama: " << P->info.nama << "| Golongan: " << P->info.golongan << "| Jumlah Penjualan: " << P->info.jumlahTerjual << endl;
         P = P->next;
     }
     cout << endl;
