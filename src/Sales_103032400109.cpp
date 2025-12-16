@@ -22,7 +22,7 @@ string cekGolongan(int jumlah)
         return "Senior";
     }
 }
-adrSales allocateSales(infotypeSales x)
+adrSales alokasiSales(infotypeSales x)
 {
     adrSales p;
     p = new elmSales;
