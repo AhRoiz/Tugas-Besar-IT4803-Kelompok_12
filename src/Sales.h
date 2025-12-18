@@ -1,4 +1,3 @@
-
 #ifndef SALES_H_INCLUDED
 #define SALES_H_INCLUDED
 
@@ -9,9 +8,8 @@ using namespace std;
 struct Sales {
     string id;
     string nama;
-    // REVISI: noTelp dihapus, diganti jumlahTerjual
     int jumlahTerjual;
-    string golongan;   // Trainee, Junior, Senior (Otomatis)
+    string golongan;
 };
 
 typedef struct Sales infotypeSales;
@@ -29,21 +27,16 @@ struct ListSales {
 };
 
 void createListSales(ListSales &L);
-// REVISI: Parameter noTelp dihapus, diganti int jumlahAwal
 adrSales alokasiSales(infotypeSales S);
-
-// Fungsi Tambahan untuk update golongan otomatis
 string cekGolongan(int jumlah);
-
 void insertFirstSales(ListSales &L, adrSales P);
 void insertLastSales(ListSales &L, adrSales P);
 void insertAfterSales(ListSales &L, adrSales Prec, adrSales P);
-
 void deleteFirstSales(ListSales &L, adrSales &P);
 void deleteLastSales(ListSales &L, adrSales &P);
 void deleteAfterSales(ListSales &L, adrSales Prec, adrSales &P);
-
 adrSales findSales(ListSales L, string id);
 void showAllSales(ListSales L);
 
 #endif
+
