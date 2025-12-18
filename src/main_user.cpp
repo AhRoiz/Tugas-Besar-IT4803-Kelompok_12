@@ -1,8 +1,10 @@
+
 #include "Sales.h"
 #include "Mobil.h"
 #include "Relation.h"
 #include <iostream>
 using namespace std;
+// Parameter ditambah: long long totalPendapatan
 void menuUser(ListSales LS, ListMobil LM, ListRelasi LR, long long totalPendapatan)
 {
     int pilihan, jumlah;
@@ -45,27 +47,55 @@ void menuUser(ListSales LS, ListMobil LM, ListRelasi LR, long long totalPendapat
             cout << "Masukkan ID Sales: ";
             cin >> idS;
             PS = findSales(LS, idS);
-            showChildParentTertentu(LR, PS);
+            if (PS != nullptr)
+            {
+                showChildParentTertentu(LR, PS);
+            }
+            else
+            {
+                cout << "ID tidak valid" << endl;
+            }
             break;
         case 6:
             cout << "Masukkan ID Mobil: ";
             cin >> idM;
             PM = findMobil(LM, idM);
-            showParentChildTertentu(LR, PM);
+            if (PM != nullptr)
+            {
+                showParentChildTertentu(LR, PM);
+            }
+            else
+            {
+                cout << "ID tidak valid" << endl;
+            }
             break;
         case 7:
             cout << "Masukkan ID Sales: ";
             cin >> idS;
             PS = findSales(LS, idS);
-            jumlah = countChildParentTertentu(LR, PS);
-            cout << "Sales " << PS->info.nama << " akan menjual " << jumlah << " mobil" << endl;
+            if (PS != nullptr)
+            {
+                jumlah = countChildParentTertentu(LR, PS);
+                cout << "Sales " << PS->info.nama << " akan menjual " << jumlah << " mobil" << endl;
+            }
+            else
+            {
+                cout << "ID tidak valid" << endl;
+            }
             break;
         case 8:
             cout << "Masukkan ID Mobil: ";
             cin >> idM;
             PM = findMobil(LM, idM);
-            jumlah = countParentsChildTertentu(LR, PM);
-            cout << "Mobil " << PM->info.merk << " " << PM->info.model << " akan dijual oleh " << jumlah << " sales" << endl;
+            if (PM != nullptr)
+            {
+                jumlah = countParentsChildTertentu(LR, PM);
+                cout << "Mobil " << PM->info.merk << " " << PM->info.model << " akan dijual oleh " << jumlah << " sales" << endl;
+            }
+            else
+            {
+                cout << "ID tidak valid" << endl;
+            }
             break;
         case 9:
             countParentTanpaChild(LR, LS);
@@ -85,4 +115,3 @@ void menuUser(ListSales LS, ListMobil LM, ListRelasi LR, long long totalPendapat
         }
     } while (pilihan != 0);
 }
-
