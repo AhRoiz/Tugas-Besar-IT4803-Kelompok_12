@@ -15,12 +15,10 @@ void menuAdmin(ListSales &LS, ListMobil &LM, ListRelasi &LR, long long &totalPen
     int hargaM, tahunM;
     string idPrec;
 
-    // Variabel untuk Edit Relasi
     string idSLama, idMLama, idSBaru, idMBaru;
 
     adrSales PS, PrecSales;
 
-    // REVISI: Menambahkan PrecMobil untuk insertAfterMobil
     adrMobil PM, PrecMobil;
 
     adrRelasi PR;
@@ -74,7 +72,6 @@ void menuAdmin(ListSales &LS, ListMobil &LM, ListRelasi &LR, long long &totalPen
             break;
 
         case 2:
-            // REVISI: Logika disamakan dengan Sales (Ada opsi First/Last/After)
             cout << "\n--- Tambah Data Mobil ---" << endl;
             cout << "ID: ";
             cin >> M.idMobil;
@@ -100,13 +97,13 @@ void menuAdmin(ListSales &LS, ListMobil &LM, ListRelasi &LR, long long &totalPen
             {
                 cout << "ID Mobil sebelumnya: ";
                 cin >> idPrec;
-                PrecMobil = findMobil(LM, idPrec); // Mencari mobil sebelumnya
+                PrecMobil = findMobil(LM, idPrec);
                 if (PrecMobil)
-                    insertafterMobil(LM, PrecMobil, PM); // Menggunakan insertafterMobil (huruf kecil 'a' sesuai header)
+                    insertafterMobil(LM, PrecMobil, PM);
                 else
                 {
                     cout << "ID tidak ditemukan!" << endl;
-                    delete PM; // Hapus memori jika insert gagal agar tidak memory leak
+                    delete PM;
                 }
             }
             break;
@@ -220,7 +217,6 @@ void menuAdmin(ListSales &LS, ListMobil &LM, ListRelasi &LR, long long &totalPen
             }
             break;
 
-        // --- CASE 8: TRANSAKSI JUAL (FIXED LOGIC) ---
         case 8:
             cout << "\n=== TRANSAKSI MOBIL TERJUAL ===" << endl;
             cout << "Masukkan ID Mobil yang terjual: ";
@@ -250,7 +246,7 @@ void menuAdmin(ListSales &LS, ListMobil &LM, ListRelasi &LR, long long &totalPen
                     // 3. Hapus Relasi
                     deleteRelasiByChild(LR, PM);
 
-                    // 4. Hapus Mobil dari List (Logika SLL)
+                    // 4. Hapus Mobil dari List
                     adrMobil hapusM;
                     if (PM == LM.first)
                         deleteFirstMobil(LM, hapusM);
@@ -277,7 +273,6 @@ void menuAdmin(ListSales &LS, ListMobil &LM, ListRelasi &LR, long long &totalPen
             }
             break;
 
-        // --- CASE 9: EDIT RELASI (NEW) ---
         case 9:
             cout << "\n=== EDIT RELASI ===" << endl;
             cout << "--- Data Lama ---" << endl;
@@ -297,4 +292,3 @@ void menuAdmin(ListSales &LS, ListMobil &LM, ListRelasi &LR, long long &totalPen
         }
     } while (pilihan != 0);
 }
-
