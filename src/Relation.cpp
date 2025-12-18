@@ -3,8 +3,8 @@
 
 void createListRelasi(ListRelasi &L)
 {
-    L.first = NULL;
-    L.last = NULL;
+    L.first = nullptr;
+    L.last = nullptr;
 }
 
 adrRelasi alokasiRelasi(adrSales P, adrMobil C)
@@ -12,14 +12,14 @@ adrRelasi alokasiRelasi(adrSales P, adrMobil C)
     adrRelasi R = new elmRelasi;
     R->parent = P;
     R->child = C;
-    R->next = NULL;
-    R->prev = NULL;
+    R->next = nullptr;
+    R->prev = nullptr;
     return R;
 }
 
 void insertFirstRelasi(ListRelasi &L, adrRelasi R)
 {
-    if (L.first == NULL)
+    if (L.first == nullptr)
     {
         L.first = R;
         L.last = R;
@@ -34,7 +34,7 @@ void insertFirstRelasi(ListRelasi &L, adrRelasi R)
 
 void insertLastRelasi(ListRelasi &L, adrRelasi R)
 {
-    if (L.first == NULL)
+    if (L.first == nullptr)
     {
         insertFirstRelasi(L, R);
     }
@@ -48,7 +48,7 @@ void insertLastRelasi(ListRelasi &L, adrRelasi R)
 
 void insertAfterRelasi(ListRelasi &L, adrRelasi Prec, adrRelasi R)
 {
-    if (Prec != NULL)
+    if (Prec != nullptr)
     {
         if (Prec == L.last)
         {
@@ -66,26 +66,26 @@ void insertAfterRelasi(ListRelasi &L, adrRelasi Prec, adrRelasi R)
 
 void deleteFirstRelasi(ListRelasi &L, adrRelasi &R)
 {
-    if (L.first != NULL)
+    if (L.first != nullptr)
     {
         R = L.first;
         if (L.first == L.last)
         {
-            L.first = NULL;
-            L.last = NULL;
+            L.first = nullptr;
+            L.last = nullptr;
         }
         else
         {
             L.first = R->next;
-            L.first->prev = NULL;
-            R->next = NULL;
+            L.first->prev = nullptr;
+            R->next = nullptr;
         }
     }
 }
 
 void deleteLastRelasi(ListRelasi &L, adrRelasi &R)
 {
-    if (L.first != NULL)
+    if (L.first != nullptr)
     {
         R = L.last;
         if (L.first == L.last)
@@ -95,15 +95,15 @@ void deleteLastRelasi(ListRelasi &L, adrRelasi &R)
         else
         {
             L.last = R->prev;
-            L.last->next = NULL;
-            R->prev = NULL;
+            L.last->next = nullptr;
+            R->prev = nullptr;
         }
     }
 }
 
 void deleteAfterRelasi(ListRelasi &L, adrRelasi Prec, adrRelasi &R)
 {
-    if (Prec != NULL && Prec->next != NULL)
+    if (Prec != nullptr && Prec->next != nullptr)
     {
         R = Prec->next;
         if (R == L.last)
@@ -114,8 +114,8 @@ void deleteAfterRelasi(ListRelasi &L, adrRelasi Prec, adrRelasi &R)
         {
             Prec->next = R->next;
             R->next->prev = Prec;
-            R->next = NULL;
-            R->prev = NULL;
+            R->next = nullptr;
+            R->prev = nullptr;
         }
     }
 }
@@ -123,7 +123,7 @@ void deleteAfterRelasi(ListRelasi &L, adrRelasi Prec, adrRelasi &R)
 void deleteRelasiSpecific(ListRelasi &L, adrSales P, adrMobil C, adrRelasi &R)
 {
     R = findRelasi(L, P, C);
-    if (R != NULL)
+    if (R != nullptr)
     {
         if (R == L.first)
         {
@@ -144,19 +144,19 @@ void deleteRelasiSpecific(ListRelasi &L, adrSales P, adrMobil C, adrRelasi &R)
 adrRelasi findRelasi(ListRelasi L, adrSales P, adrMobil C)
 {
     adrRelasi R = L.first;
-    while (R != NULL)
+    while (R != nullptr)
     {
         if (R->parent == P && R->child == C)
             return R;
         R = R->next;
     }
-    return NULL;
+    return nullptr;
 }
 
 void deleteRelasiByParent(ListRelasi &L, adrSales P)
 {
     adrRelasi R = L.first;
-    while (R != NULL)
+    while (R != nullptr)
     {
         adrRelasi nextNode = R->next;
         if (R->parent == P)
@@ -180,7 +180,7 @@ void deleteRelasiByParent(ListRelasi &L, adrSales P)
 void deleteRelasiByChild(ListRelasi &L, adrMobil C)
 {
     adrRelasi R = L.first;
-    while (R != NULL)
+    while (R != nullptr)
     {
         adrRelasi nextNode = R->next;
         if (R->child == C)
@@ -204,13 +204,13 @@ void deleteRelasiByChild(ListRelasi &L, adrMobil C)
 void showParentWithChild(ListSales LS, ListRelasi LR)
 {
     adrSales P = LS.first;
-    while (P != NULL)
+    while (P != nullptr)
     {
         cout << "Sales: " << P->info.nama << " (Gol: " << P->info.golongan << ")" << endl;
         cout << "  Mobil: ";
         adrRelasi R = LR.first;
         bool found = false;
-        while (R != NULL)
+        while (R != nullptr)
         {
             if (R->parent == P)
             {
@@ -229,13 +229,13 @@ void showParentWithChild(ListSales LS, ListRelasi LR)
 void showChildWithParent(ListMobil LM, ListRelasi LR)
 {
     adrMobil C = LM.first;
-    while (C != NULL)
+    while (C != nullptr)
     {
         cout << "Mobil: " << C->info.model << endl;
         cout << "  Sales: ";
         adrRelasi R = LR.first;
         bool found = false;
-        while (R != NULL)
+        while (R != nullptr)
         {
             if (R->child == C)
             {
@@ -260,10 +260,10 @@ void updateRelasi(ListRelasi &LR, ListSales LS, ListMobil LM, string idSLama, st
     adrSales salesBaru = findSales(LS, idSBaru);
     adrMobil mobilBaru = findMobil(LM, idMBaru);
 
-    if (salesLama != NULL && mobilLama != NULL && salesBaru != NULL && mobilBaru != NULL)
+    if (salesLama != nullptr && mobilLama != nullptr && salesBaru != nullptr && mobilBaru != nullptr)
     {
         adrRelasi R = findRelasi(LR, salesLama, mobilLama);
-        if (R != NULL)
+        if (R != nullptr)
         {
             R->parent = salesBaru;
             R->child = mobilBaru;
@@ -280,4 +280,126 @@ void updateRelasi(ListRelasi &LR, ListSales LS, ListMobil LM, string idSLama, st
     {
         cout << ">> GAGAL: ID Sales atau ID Mobil (Lama/Baru) tidak valid." << endl;
     }
+}
+void showChildParentTertentu(ListRelasi LR, adrSales P)
+{
+    cout << "Mobil yang dijual oleh Sales " << P->info.nama << ":" << endl;
+    adrRelasi R = LR.first;
+    bool found = false;
+    while (R != nullptr)
+    {
+        if (R->parent == P)
+        {
+            cout << "- " << R->child->info.model << endl;
+            found = true;
+        }
+        R = R->next;
+    }
+    if (!found)
+    {
+        cout << "Tidak ada mobil yang dijual oleh sales ini." << endl;
+    }
+}
+
+void showParentChildTertentu(ListRelasi LR, adrMobil c)
+{
+    cout << "Mobil " << c->info.merk << " " << c->info.model << ":" << endl;
+    adrRelasi R = LR.first;
+    bool found = false;
+    while (R != nullptr)
+    {
+        if (R->child == c)
+        {
+            cout << "- " << R->parent->info.id << " " << R->parent->info.nama << endl;
+            found = true;
+        }
+        R = R->next;
+    }
+    if (!found)
+    {
+        cout << "Tidak ada sales yang menjual mobil ini." << endl;
+    }
+}
+
+int countChildParentTertentu(ListRelasi LR, adrSales P)
+{
+    int count = 0;
+    adrRelasi R = LR.first;
+    while (R != nullptr)
+    {
+        if (R->parent == P)
+        {
+            count++;
+        }
+        R = R->next;
+    }
+    return count;
+}
+int countParentsChildTertentu(ListRelasi LR, adrMobil C)
+{
+    int count = 0;
+    adrRelasi R = LR.first;
+    while (R != nullptr)
+    {
+        if (R->child == C)
+        {
+            count++;
+        }
+        R = R->next;
+    }
+    return count;
+}
+void countChildTanpaParent(ListRelasi LR, ListMobil LM)
+{
+    int count = 0;
+    adrMobil m = LM.first;
+    while (m != nullptr)
+    {
+        adrRelasi R = LR.first;
+        bool hasParent = false;
+        while (R != nullptr && hasParent == false)
+        {
+            if (R->child == m)
+            {
+                hasParent = true;
+            }
+            else
+            {
+                R = R->next;
+            }
+        }
+        if (hasParent == false)
+        {
+            count++;
+        }
+    }
+    m = m->next;
+    cout << ">> Jumlah Mobil tanpa Sales: " << count << endl;
+}
+void countParentTanpaChild(ListRelasi LR, ListSales LS)
+{
+    int count = 0;
+    adrSales s = LS.first;
+    while (s != nullptr)
+    {
+        adrRelasi R = LR.first;
+        bool hasChild = false;
+        while (R != nullptr && hasChild == false)
+        {
+            if (R->parent == s)
+            {
+                hasChild = true;
+            }
+            else
+            {
+                R = R->next;
+            }
+        }
+        if (hasChild == false)
+        {
+            count++;
+        }
+    }
+    s = s->next;
+    cout << ">> Jumlah Sales tanpa Mobil: " << count << endl;
 }

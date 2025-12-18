@@ -6,14 +6,16 @@
 
 typedef struct elmRelasi *adrRelasi;
 
-struct elmRelasi {
+struct elmRelasi
+{
     adrSales parent;
     adrMobil child;
     adrRelasi next;
     adrRelasi prev;
 };
 
-struct ListRelasi {
+struct ListRelasi
+{
     adrRelasi first;
     adrRelasi last;
 };
@@ -37,7 +39,12 @@ void deleteRelasiByChild(ListRelasi &L, adrMobil C);
 
 void showParentWithChild(ListSales LS, ListRelasi LR);
 void showChildWithParent(ListMobil LM, ListRelasi LR);
-
+void showChildParentTertentu(ListRelasi LR, adrSales P);
+void showParentChildTertentu(ListRelasi LR, adrMobil C);
+int countChildParentTertentu(ListRelasi LR, adrSales P);
+int countParentsChildTertentu(ListRelasi LR, adrMobil C);
+void countChildTanpaParent(ListRelasi LR, ListMobil LM);
+void countParentTanpaChild(ListRelasi LR, ListSales LS);
 // --- TAMBAHAN BARU ---
 void updateRelasi(ListRelasi &LR, ListSales LS, ListMobil LM, string idSLama, string idMLama, string idSBaru, string idMBaru);
 
