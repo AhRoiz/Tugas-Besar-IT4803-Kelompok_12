@@ -1,9 +1,9 @@
-
 #include "Sales.h"
 #include "Mobil.h"
 #include "Relation.h"
 #include <iostream>
 using namespace std;
+
 void menuAdmin(ListSales &LS, ListMobil &LM, ListRelasi &LR, long long &totalPendapatan)
 {
     int pilihan, subPilihan;
@@ -19,7 +19,10 @@ void menuAdmin(ListSales &LS, ListMobil &LM, ListRelasi &LR, long long &totalPen
     string idSLama, idMLama, idSBaru, idMBaru;
 
     adrSales PS, PrecSales;
-    adrMobil PM;
+
+    // REVISI: Menambahkan PrecMobil untuk insertAfterMobil
+    adrMobil PM, PrecMobil;
+
     adrRelasi PR;
 
     do
@@ -71,6 +74,8 @@ void menuAdmin(ListSales &LS, ListMobil &LM, ListRelasi &LR, long long &totalPen
             break;
 
         case 2:
+            // REVISI: Logika disamakan dengan Sales (Ada opsi First/Last/After)
+            cout << "\n--- Tambah Data Mobil ---" << endl;
             cout << "ID: ";
             cin >> M.idMobil;
             cout << "Merk: ";
@@ -81,7 +86,29 @@ void menuAdmin(ListSales &LS, ListMobil &LM, ListRelasi &LR, long long &totalPen
             cin >> M.harga;
             cout << "Tahun: ";
             cin >> M.tahunProduksi;
-            insertLastMobil(LM, allocateMobil(M));
+
+            PM = allocateMobil(M);
+
+            cout << "1.First 2.Last 3.After: ";
+            cin >> subPilihan;
+
+            if (subPilihan == 1)
+                insertFirstMobil(LM, PM);
+            else if (subPilihan == 2)
+                insertLastMobil(LM, PM);
+            else
+            {
+                cout << "ID Mobil sebelumnya: ";
+                cin >> idPrec;
+                PrecMobil = findMobil(LM, idPrec); // Mencari mobil sebelumnya
+                if (PrecMobil)
+                    insertafterMobil(LM, PrecMobil, PM); // Menggunakan insertafterMobil (huruf kecil 'a' sesuai header)
+                else
+                {
+                    cout << "ID tidak ditemukan!" << endl;
+                    delete PM; // Hapus memori jika insert gagal agar tidak memory leak
+                }
+            }
             break;
 
         case 3:
@@ -270,3 +297,4 @@ void menuAdmin(ListSales &LS, ListMobil &LM, ListRelasi &LR, long long &totalPen
         }
     } while (pilihan != 0);
 }
+
