@@ -25,9 +25,6 @@ struct ListMobil {
     adrMobil first;
 };
 
-
-// Primitif
-
 void createListMobil(ListMobil &Lm);
 adrMobil allocateMobil(infotypeMobil x);
 void insertFirstMobil(ListMobil &Lm, adrMobil p);
@@ -39,5 +36,5 @@ void deleteAfterMobil(ListMobil &Lm, adrMobil prec, adrMobil &p);
 adrMobil findMobil(ListMobil Lm, string idMobil);
 void showAllMobil(ListMobil Lm);
 
-#endif
 
+#endif
