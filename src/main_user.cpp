@@ -1,10 +1,8 @@
-
 #include "Sales.h"
 #include "Mobil.h"
 #include "Relation.h"
 #include <iostream>
 using namespace std;
-// Parameter ditambah: long long totalPendapatan
 void menuUser(ListSales LS, ListMobil LM, ListRelasi LR, long long totalPendapatan)
 {
     int pilihan, jumlah;
@@ -87,3 +85,4 @@ void menuUser(ListSales LS, ListMobil LM, ListRelasi LR, long long totalPendapat
         }
     } while (pilihan != 0);
 }
+
