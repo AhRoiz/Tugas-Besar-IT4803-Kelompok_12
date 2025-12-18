@@ -1,4 +1,5 @@
-
+#include <iostream>
+using namespace std;
 #include "Relation.h"
 
 void createListRelasi(ListRelasi &L)
@@ -251,7 +252,6 @@ void showChildWithParent(ListMobil LM, ListRelasi LR)
     }
 }
 
-// --- IMPLEMENTASI FITUR BARU EDIT RELASI ---
 void updateRelasi(ListRelasi &LR, ListSales LS, ListMobil LM, string idSLama, string idMLama, string idSBaru, string idMBaru)
 {
     adrSales salesLama = findSales(LS, idSLama);
@@ -372,10 +372,13 @@ void countChildTanpaParent(ListRelasi LR, ListMobil LM)
         {
             count++;
         }
+
+        m = m->next;
     }
-    m = m->next;
+
     cout << ">> Jumlah Mobil tanpa Sales: " << count << endl;
 }
+
 void countParentTanpaChild(ListRelasi LR, ListSales LS)
 {
     int count = 0;
@@ -399,8 +402,10 @@ void countParentTanpaChild(ListRelasi LR, ListSales LS)
         {
             count++;
         }
+
+        s = s->next;
     }
-    s = s->next;
+
     cout << ">> Jumlah Sales tanpa Mobil: " << count << endl;
 }
 
@@ -470,3 +475,4 @@ void dataDummy(ListSales &LS, ListMobil &LM)
     PM = allocateMobil(m);
     insertFirstMobil(LM, PM);
 }
+
