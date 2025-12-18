@@ -5,7 +5,6 @@
 
 using namespace std;
 
-// Update Prototype fungsi agar menerima parameter totalPendapatan
 void menuAdmin(ListSales &LS, ListMobil &LM, ListRelasi &LR, long long &totalPendapatan);
 void menuUser(ListSales LS, ListMobil LM, ListRelasi LR, long long totalPendapatan);
 
@@ -19,7 +18,6 @@ int main()
     createListMobil(LM);
     createListRelasi(LR);
 
-    // Variabel Penampung Pendapatan (Shared Variable)
     long long totalPendapatan = 0;
     dataDummy(LS, LM);
     int peran;
@@ -34,12 +32,10 @@ int main()
 
         if (peran == 1)
         {
-            // Admin bisa mengubah totalPendapatan (pass by reference)
             menuAdmin(LS, LM, LR, totalPendapatan);
         }
         else if (peran == 2)
         {
-            // User hanya melihat (pass by value)
             menuUser(LS, LM, LR, totalPendapatan);
         }
     } while (peran != 0);
