@@ -403,3 +403,70 @@ void countParentTanpaChild(ListRelasi LR, ListSales LS)
     s = s->next;
     cout << ">> Jumlah Sales tanpa Mobil: " << count << endl;
 }
+
+void dataDummy(ListSales &LS, ListMobil &LM)
+{
+    infotypeSales s;
+    infotypeMobil m;
+    adrSales PS;
+    adrMobil PM;
+    s.id = "109";
+    s.nama = "Ja'far";
+    s.jumlahTerjual = 5;
+    s.golongan = cekGolongan(s.jumlahTerjual);
+    PS = alokasiSales(s);
+    insertFirstSales(LS, PS);
+
+    s.id = "45";
+    s.nama = "Ahmad";
+    s.jumlahTerjual = 9;
+    s.golongan = cekGolongan(s.jumlahTerjual);
+    PS = alokasiSales(s);
+    insertFirstSales(LS, PS);
+
+    s.id = "139";
+    s.nama = "Aldi";
+    s.jumlahTerjual = 3;
+    s.golongan = cekGolongan(s.jumlahTerjual);
+    PS = alokasiSales(s);
+    insertFirstSales(LS, PS);
+
+    s.id = "91";
+    s.nama = "Nabil";
+    s.jumlahTerjual = 0;
+    s.golongan = cekGolongan(s.jumlahTerjual);
+    PS = alokasiSales(s);
+    insertFirstSales(LS, PS);
+
+    m.idMobil = "911";
+    m.merk = "Porsche";
+    m.model = "911_GT3";
+    m.harga = 63000000;
+    m.tahunProduksi = 2020;
+    PM = allocateMobil(m);
+    insertFirstMobil(LM, PM);
+
+    m.idMobil = "921";
+    m.merk = "Lexus";
+    m.model = "LFA";
+    m.harga = 93000000;
+    m.tahunProduksi = 2018;
+    PM = allocateMobil(m);
+    insertFirstMobil(LM, PM);
+
+    m.idMobil = "931";
+    m.merk = "Nissan";
+    m.model = "GTR_R35";
+    m.harga = 85000000;
+    m.tahunProduksi = 2018;
+    PM = allocateMobil(m);
+    insertFirstMobil(LM, PM);
+
+    m.idMobil = "941";
+    m.merk = "Nissan";
+    m.model = "Altima";
+    m.harga = 2340000;
+    m.tahunProduksi = 2017;
+    PM = allocateMobil(m);
+    insertFirstMobil(LM, PM);
+}

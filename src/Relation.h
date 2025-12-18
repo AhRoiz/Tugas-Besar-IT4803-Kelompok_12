@@ -48,4 +48,5 @@ void countParentTanpaChild(ListRelasi LR, ListSales LS);
 // --- TAMBAHAN BARU ---
 void updateRelasi(ListRelasi &LR, ListSales LS, ListMobil LM, string idSLama, string idMLama, string idSBaru, string idMBaru);
 
+void dataDummy(ListSales &LS, ListMobil &LM);
 #endif
