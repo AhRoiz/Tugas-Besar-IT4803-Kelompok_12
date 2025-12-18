@@ -1,5 +1,5 @@
-#ifndef RELATION_H
-#define RELATION_H
+#ifndef RELATION_H_INCLUDED
+#define RELATION_H_INCLUDED
 
 #include "Sales.h"
 #include "Mobil.h"
@@ -45,7 +45,6 @@ int countChildParentTertentu(ListRelasi LR, adrSales P);
 int countParentsChildTertentu(ListRelasi LR, adrMobil C);
 void countChildTanpaParent(ListRelasi LR, ListMobil LM);
 void countParentTanpaChild(ListRelasi LR, ListSales LS);
-// --- TAMBAHAN BARU ---
 void updateRelasi(ListRelasi &LR, ListSales LS, ListMobil LM, string idSLama, string idMLama, string idSBaru, string idMBaru);
 
 void dataDummy(ListSales &LS, ListMobil &LM);
